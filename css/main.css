@@ -1,0 +1,55 @@
+@import  url( https://fonts.googleapis.com/css2?family=Lato&family=Libre+Baskerville:wght@700&display=swap);
+/* ============================================ */
+/* Global Styles */
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Libre Baskerville', serif;
+}
+
+p{
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+.full-height{
+    height: 100vh ;
+}
+
+
+/* ============================================ */
+/* Components */
+button{
+    border: none;
+    padding: 16px 20px;
+    border-radius: 8px;
+    background-color: #18382b;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.carousel-item{
+    background-color: #e6f2e9;
+}
+
+.carousel-control-next, .carousel-control-prev{
+    top: auto;
+    right: auto;
+    left: 24px;
+    bottom: 24px;
+    width: auto;
+    background-color: #ffffff;
+    padding: auto;
+    border-radius: 50%;
+}
+.carousel-control-next{
+    left: 84px;
+}
+
+/* Home Page */
+.hero-image{
+    height: 90vh;
+    position: relative;
+    bottom: -100px;
+}
