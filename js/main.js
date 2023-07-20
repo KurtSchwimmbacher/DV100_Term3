@@ -7,3 +7,26 @@ $(document).ready(function(){
     $(".hero-image").animate({top:'-=100'});
 
 });
+
+
+
+$(document).ready( ()=>{
+  
+    $(".carousel-control-next").on('click', () => {
+        $(".slider-con").animate({
+            width : "33%",
+            'marginLeft' : "+=16.5%"
+        },
+        {duration : 1000})
+        });
+
+
+    $(".carousel-control-prev").on('click', () => {
+        /*$("slider-con").animate({
+            width : "66%",
+            'marginLeft' : "-16.5%"
+        },
+        {duration : 100});*/
+        $(this).removeAttr('style');
+    });
+});
