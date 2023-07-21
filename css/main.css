@@ -46,6 +46,32 @@ button{
 .carousel-control-next{
     left: 84px;
 }
+/* ================================================================================= */
+/* Accordion Components */
+.accord-con{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgba(24,56,43,0.6);
+    color: white;
+}
+
+.accordion-button {
+    color: #18382b;
+    background-color: #e6f2e9;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+.accordion-button::after {
+    background-image: url(../assets/radish-svgrepo-com.svg);
+}
+
+.accordion-button:not(.collapsed)::after{
+    background-image: url(../assets/radish-svgrepo-com.svg);
+}
 
 /* Home Page */
 .hero-image{

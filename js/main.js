@@ -11,24 +11,20 @@ $(document).ready(function(){
 
 
 $(document).ready( ()=>{
-  
-    $(".slider-con").css("width","66%")
+
+    $(".text-show").hide()
 
     $(".carousel-control-next").on('click', () => {
+
         $(".slider-con").animate({
             width : "33%",
-            'marginLeft' : "+=16.5%"
+            'marginLeft' : "0%"
         },
-        {duration : 1000})
+        {duration : 2000})
+
+        $(".text-show").delay(1800).show(0)
+
         });
 
 
-  /*  $(".carousel-control-prev").on('click', () => {
-        $("slider-con").animate({
-            width : "66%",
-            'marginLeft' : "-16.5%"
-        },
-        {duration : 100});
-        $(this).removeAttr('style');
-    }); */
 });
