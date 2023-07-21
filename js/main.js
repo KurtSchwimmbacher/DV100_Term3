@@ -12,6 +12,8 @@ $(document).ready(function(){
 
 $(document).ready( ()=>{
   
+    $(".slider-con").css("width","66%")
+
     $(".carousel-control-next").on('click', () => {
         $(".slider-con").animate({
             width : "33%",
@@ -21,12 +23,12 @@ $(document).ready( ()=>{
         });
 
 
-    $(".carousel-control-prev").on('click', () => {
-        /*$("slider-con").animate({
+  /*  $(".carousel-control-prev").on('click', () => {
+        $("slider-con").animate({
             width : "66%",
             'marginLeft' : "-16.5%"
         },
-        {duration : 100});*/
+        {duration : 100});
         $(this).removeAttr('style');
-    });
+    }); */
 });
