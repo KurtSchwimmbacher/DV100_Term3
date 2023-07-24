@@ -19,6 +19,25 @@ p{
 
 /* ============================================ */
 /* Components */
+/* Navigation */
+
+.nav-link{
+    font-family: 'Lato', sans-serif;
+    color: rgba(0,0,0,0.6);
+}
+
+.nav-link:hover{
+    color: #18382b;
+}
+
+.nav-link.active{
+    color: #18382b;
+    border-bottom: 2px solid #18382b;
+}
+
+
+
+/* Carousel */
 button{
     border: none;
     padding: 16px 20px;
@@ -71,6 +90,32 @@ button{
 
 .accordion-button:not(.collapsed)::after{
     background-image: url(../assets/radish-svgrepo-com.svg);
+}
+
+
+
+/* Card */
+.card{
+    border-radius: 150px 150px 12px 12px;
+    background-color: #f3f3f3;
+    text-align: center;
+    height: 440px;
+    border: none;
+}
+
+.card-img-top{
+    width: auto;
+    height: 320px;
+    margin: auto;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.card-img-top.small{
+    height: 200px;
+}
+
+.card-text{
+    color: #18382b;
 }
 
 /* Home Page */
