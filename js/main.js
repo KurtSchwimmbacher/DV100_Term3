@@ -5,33 +5,33 @@
 // Plants Array
 const plantArr = [
     {
-        name : "Ficus Tree",
+        name : "Fikus Tree",
         price : 350,
-        description : "filler description",
+        description : "Graceful and lush, this charming indoor plant boasts glossy, emerald-green leaves that effortlessly brighten any space.",
         image : "plant1.png"
     },
     {
         name : "White Sprite Succulent",
         price : 200,
-        description : "filler description",
+        description : "Delicate and captivating, this rare succulent showcases a mesmerizing silver-white hue that gracefully adorns its petite, fleshy leaves.",
         image : "plant2.png"
     },
     {
         name : "Snake Plant",
         price : 400,
-        description : "filler description",
+        description : "Boasting tall, sleek, and sword-like leaves, this botanical marvel adds a touch of modern flair to any setting.",
         image : "plant3.png"
     },
     {
         name : "Parlour Palm",
         price : 350,
-        description : "filler description",
+        description : "With its lush, feather-like fronds and compact size, this indoor beauty makes a striking addition to any interior space.",
         image : "plant4.png"
     },
     {
         name : "Japanese Maple",
         price : 1200,
-        description : "filler description",
+        description : "Known for its stunning foliage that transforms with the seasons, this ornamental tree captivates with its delicate, lacy leaves in vibrant shades of red, orange, or gold.",
         image : "plant5.png"
     }
 ];
@@ -41,15 +41,16 @@ const plantArr = [
 // functions
 // =============================================================================================================
 
-// load all plants on browse page
+// load all plants on website
 loadPlants = () =>{
     
-    console.log(plantArr);
-
     for(let i =0; i < plantArr.length;i++){
         const plant = plantArr[i];
 
         console.log(plant);
+
+        // load plants on browse page
+        // ==========================================================================================================
 
         // Select the plants container and add current array plant to it
         $("#plantsContainer").append($("#plantCardTemplate").html());
@@ -65,16 +66,35 @@ loadPlants = () =>{
 
         // hide description text from the current card item
         $(currentChild).find("#descr").hide();
+        // -------------------------------------------------------------------------------------------------------
+
+        // load plants on Wishlist page
+        // ==========================================================================================================
+
+        // select the plant wishlist container and add current plant array into it
+        $("#wishlist-plant-container").append($("#wishlist-table-template").html());
+
+        // Create a bew variable for the most recently added row
+        let newChild = $("#wishlist-plant-container").children().eq(i+1);
+
+        // Set the content for the current plant into the table from the plant array
+        // $(newChild).find("#tableRow").text(i+1);
+        $(newChild).find(".table-img").attr("src","../assets/" + plant.image);
+        $(newChild).find("#rowName").text(plant.name);
+        $(newChild).find("#rowPrice").text("R" + plant.price);
     }
 
 }
+
+
+
 // --------------------------------------------------------------------------------------------
 
 // Document ready to run functions
 $(document).ready( ()=>{
 
 // Home page
-//=============================================================
+// ==========================================================================================================
 
 //When the document loads animate hero image upwards
     $(".hero-image").animate({top:'-=100'});
@@ -97,7 +117,7 @@ $(document).ready( ()=>{
 
 
 // Browse page
-// =============================================
+// ==========================================================================================================
 
         // load the plant function
         loadPlants();
@@ -112,6 +132,21 @@ $(document).ready( ()=>{
             // Resize the card for additional content
             $(this).find($(".card-img-top")).toggleClass("small");
         });
+
+
+//Wishlist Page 
+// ==========================================================================================================
+
+        // remove the items from the table
+        $("#wishlist-plant-container").on('click','.remove', function (){
+            //Toggle the price and description text
+            
+            console.log($(this).parent().attr("id"))
+            
+            $(this).parent().remove();
+    });
+
+
 
 });
 

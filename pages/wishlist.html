@@ -58,31 +58,17 @@
                 <th scope="col"></th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td><img src="../assets/plants/dragon scale plant.jpg" class="table-img"></td>
-                <td>Alocasia Baginda</td>
-                <td class="remove" id="remove1"></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td><img src="../assets/plants/monstera dubia plant.jpg" class="table-img"></td>
-                <td>Monstera Dubia</td>
-                <td class="remove" id="remove2"></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td><img src="../assets/plants/philodendron florida.jpg" class="table-img"></td>
-                <td>Philodendron Florida</td>
-                <td class="remove" id="remove3"></td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td><img src="../assets/plants/scindapsus pictus plant.jpg" class="table-img"></td>
-                <td>Scindapsus Pictus</td>
-                <td class="remove" id="remove4"></td>
-              </tr>
+            <tbody id="wishlist-plant-container">
+              <template id="wishlist-table-template">
+                <!-- Table Row Code -->
+                <tr id="table-row-content">
+                  <th scope="row" id="tableRow"><img src="../assets/plants/dragon scale plant.jpg" class="table-img"></th>
+                  <td id="rowName">Alocasia Baginda</td>
+                  <td id="rowPrice">R250</td>
+                  <td class="remove"></td>
+                </tr>
+                <!-- Table Row Code end-->
+              </template>
             </tbody>
           </table>
         
