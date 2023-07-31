@@ -39,5 +39,19 @@ $(document).ready( ()=>{
             //resize plant image
             $(".card-img-top").toggleClass("small");
         });
+
+
+
+// ===============================================================================
+// wishlist page
+
+
+// on remove button click remove entry from table
+$(".remove").click( () =>{
+    console.log($(".remove")[]);
+    // $("#remove1").parent().remove();
+})
+
 });
+
 

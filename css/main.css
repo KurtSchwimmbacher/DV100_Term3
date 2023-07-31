@@ -123,9 +123,7 @@ button{
 
 /* ========================================================================================================== */
 /* Table components */
-.table{
-    background-color: #e6f2e9;
-}
+
 
 
 .table-img{
@@ -137,7 +135,6 @@ button{
 
 th,td{
     color: #18382b;
-    background-color: #e6f2e9;
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     vertical-align: middle;
@@ -149,7 +146,7 @@ th,td{
 }
 
 .remove{
-    background-image: url(../assets/minus-sign-of-a-line-in-horizontal-position-svgrepo-com.svg);
+    background-image: url(../assets/svgs/minus-sign-of-a-line-in-horizontal-position-svgrepo-com.svg);
     background-position: center;
     background-size: 25px;
     background-repeat: no-repeat;
@@ -157,7 +154,7 @@ th,td{
 }
 
 .remove:hover{
-    background-image: url(../assets/multiply-svgrepo-com.svg);
+    background-image: url(../assets/svgs/multiply-svgrepo-com.svg);
     background-position: center;
     background-size: 30px;
     background-repeat: no-repeat;
@@ -180,3 +177,6 @@ th,td{
     overflow: hidden;
    position: relative;
 }
+
+
+/* Wishlist page */
