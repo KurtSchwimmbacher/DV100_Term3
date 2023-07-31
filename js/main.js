@@ -1,6 +1,8 @@
+// ===========================================================
+// Variables
+
 // ==========================================================
 // Plants Array
-// ===========================================================
 const plantArr = [
     {
         name : "Ficus Tree",
@@ -37,7 +39,7 @@ const plantArr = [
 
 
 // functions
-
+// =============================================================================================================
 
 // load all plants on browse page
 loadPlants = () =>{
@@ -57,7 +59,7 @@ loadPlants = () =>{
 
         // Set the content for the current plant card from the plant array
         $(currentChild).find("#nameText").text(plant.name);
-        $(currentChild).find("#price").text(plant.price);
+        $(currentChild).find("#price").text("R" + plant.price);
         $(currentChild).find("#descr").text(plant.description);
         $(currentChild).find(".card-img-top").attr("src","../assets/" + plant.image);
 
@@ -66,15 +68,13 @@ loadPlants = () =>{
     }
 
 }
+// --------------------------------------------------------------------------------------------
 
-
-
-
-
-// -------------------------------------------------------------
+// Document ready to run functions
 $(document).ready( ()=>{
-//=============================================================
+
 // Home page
+//=============================================================
 
 //When the document loads animate hero image upwards
     $(".hero-image").animate({top:'-=100'});
@@ -95,29 +95,26 @@ $(document).ready( ()=>{
 
         });
 
-// =============================================
-// Browse page
 
-        $("#plantsContainer").on('click',".card", () =>{
-            //Toggle the price and description text
-            $(this).find($("#descr")).toggle();
-            $(this).find($("#price")).toggle();
-        });
+// Browse page
+// =============================================
 
         // load the plant function
         loadPlants();
 
+        $("#plantsContainer").on('click','.card', function (){
+            //Toggle the price and description text
+
+
+            $(this).find("#descr").toggle();
+            $(this).find("#price").toggle();
+
+            // Resize the card for additional content
+            $(this).find($(".card-img-top")).toggleClass("small");
+        });
+
 });
 
-$(document).ready( () =>{
-// ===============================================================================
-// wishlist page
 
-// on remove button click remove entry from table
-    $(".remove").click( () =>{
-        console.log($(".remove"));
-        // $("#remove1").parent().remove();
-    })
-});
 
 
