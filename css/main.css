@@ -88,11 +88,11 @@ button{
 }
 
 .accordion-button::after {
-    background-image: url(../assets/radish-svgrepo-com.svg);
+    background-image: url(../assets/svgs/radish-svgrepo-com.svg);
 }
 
 .accordion-button:not(.collapsed)::after{
-    background-image: url(../assets/radish-svgrepo-com.svg);
+    background-image: url(../assets/svgs/radish-svgrepo-com.svg);
 }
 
 
