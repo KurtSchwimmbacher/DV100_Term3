@@ -82,6 +82,10 @@ loadPlants = () =>{
         $(newChild).find(".table-img").attr("src","../assets/" + plant.image);
         $(newChild).find("#rowName").text(plant.name);
         $(newChild).find("#rowPrice").text("R" + plant.price);
+        $(newChild).find("#rowDescr").text(plant.description);
+
+        // hide description from table
+        $(newChild).find("#rowDescr").hide();
     }
 
 }
@@ -139,14 +143,23 @@ $(document).ready( ()=>{
 
         // remove the items from the table
         $("#wishlist-plant-container").on('click','.remove', function (){
-            //Toggle the price and description text
-            
-            console.log($(this).parent().attr("id"))
-            
+            //remove selected row from the table     
             $(this).parent().remove();
     });
 
+    // --------------------------------------------------------------------------------------------
+    // hide and unhide description text from table
+    $("#wishlist-plant-container").on('mouseenter','#rowName', function (){
+        //Toggle the price and description text
+        $(this).hide()
+        $(this).parent().find("#rowDescr").show();
+    });
 
+    $("#wishlist-plant-container").on('mouseleave','#rowDescr', function (){
+        //Toggle the price and description text
+        $(this).hide();
+        $(this).parent().find("#rowName").show();
+    });
 
 });
 
