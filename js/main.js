@@ -1,4 +1,77 @@
+// ==========================================================
+// Plants Array
+// ===========================================================
+const plantArr = [
+    {
+        name : "Ficus Tree",
+        price : 350,
+        description : "filler description",
+        image : "plant1.png"
+    },
+    {
+        name : "White Sprite Succulent",
+        price : 200,
+        description : "filler description",
+        image : "plant2.png"
+    },
+    {
+        name : "Snake Plant",
+        price : 400,
+        description : "filler description",
+        image : "plant3.png"
+    },
+    {
+        name : "Parlour Palm",
+        price : 350,
+        description : "filler description",
+        image : "plant4.png"
+    },
+    {
+        name : "Japanese Maple",
+        price : 1200,
+        description : "filler description",
+        image : "plant5.png"
+    }
+];
 
+
+
+// functions
+
+
+// load all plants on browse page
+loadPlants = () =>{
+    
+    console.log(plantArr);
+
+    for(let i =0; i < plantArr.length;i++){
+        const plant = plantArr[i];
+
+        console.log(plant);
+
+        // Select the plants container and add current array plant to it
+        $("#plantsContainer").append($("#plantCardTemplate").html());
+
+        // Create a variable that contains the most recently added card
+        let currentChild = $("#plantsContainer").children().eq(i+1);
+
+        // Set the content for the current plant card from the plant array
+        $(currentChild).find("#nameText").text(plant.name);
+        $(currentChild).find("#price").text(plant.price);
+        $(currentChild).find("#descr").text(plant.description);
+        $(currentChild).find(".card-img-top").attr("src","../assets/" + plant.image);
+
+        // hide description text from the current card item
+        $(currentChild).find("#descr").hide();
+    }
+
+}
+
+
+
+
+
+// -------------------------------------------------------------
 $(document).ready( ()=>{
 //=============================================================
 // Home page
@@ -25,33 +98,26 @@ $(document).ready( ()=>{
 // =============================================
 // Browse page
 
-        // Hide description text on card
-        $("#descr").hide();
-
-
-        $(".card").click( () =>{
-
-            console.log("Hello Paul")
+        $("#plantsContainer").on('click',".card", () =>{
             //Toggle the price and description text
-            $("#descr").toggle();
-            $("#price").toggle();
-        
-            //resize plant image
-            $(".card-img-top").toggleClass("small");
+            $(this).find($("#descr")).toggle();
+            $(this).find($("#price")).toggle();
         });
 
+        // load the plant function
+        loadPlants();
 
+});
 
+$(document).ready( () =>{
 // ===============================================================================
 // wishlist page
 
-
 // on remove button click remove entry from table
-$(".remove").click( () =>{
-    console.log($(".remove")[]);
-    // $("#remove1").parent().remove();
-})
-
+    $(".remove").click( () =>{
+        console.log($(".remove"));
+        // $("#remove1").parent().remove();
+    })
 });
 
 

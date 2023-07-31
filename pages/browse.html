@@ -53,19 +53,23 @@
       <h2>Browse Plants</h2>
 
       <!-- Row contains list of plant cards -->
-      <div class="row pt-5">
-        <div class="col-4">
-      <!-- Card code -->
-          <div class="card">
-            <img src="../assets/plant1.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Ficus Tree</h5>
-              <p class="card-text" id="price">R250</p>
-              <p class="card-text desc" id="descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero repudiandae omnis autem repellat expedita sit ipsam sed veritatis, dolorem quia facilis mollitia at iure perferendis tempore, voluptate ullam cupiditate sint!</p>
+      <div class="row py-5 gy-5" id="plantsContainer">
+        
+        <!-- Browse card template -->
+        <template id="plantCardTemplate">
+          <div class="col-4">
+            <!-- Card code -->
+              <div class="card">
+                <img src="../assets/plant1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title" id="nameText">Ficus Tree</h5>
+                  <p class="card-text" id="price">R250</p>
+                  <p class="card-text desc" id="descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero repudiandae omnis autem repellat expedita sit ipsam sed veritatis, dolorem quia facilis mollitia at iure perferendis tempore, voluptate ullam cupiditate sint!</p>
+                </div>
+              </div>
+          <!-- Card end -->
             </div>
-          </div>
-      <!-- Card end -->
-        </div>
+        </template>
       </div>
     </div>
 
