@@ -10,7 +10,8 @@ const plantArr = [
         description : "Graceful and lush, this charming indoor plant boasts glossy, emerald-green leaves that effortlessly brighten any space.",
         image : "plant1.png" ,
         lightAmount:"low",
-        addedDate: "2023-03-25"
+        addedDate: "2023-03-25",
+        onSale: true
     },
     {
         name : "White Sprite Succulent",
@@ -18,7 +19,8 @@ const plantArr = [
         description : "Delicate and captivating, this rare succulent showcases a mesmerizing silver-white hue that gracefully adorns its petite, fleshy leaves.",
         image : "plant2.png",
         lightAmount:"bright",
-        addedDate: "2023-05-01"
+        addedDate: "2023-05-01",
+        onSale: false
     },
     {
         name : "Snake Plant",
@@ -26,7 +28,8 @@ const plantArr = [
         description : "Boasting tall, sleek, and sword-like leaves, this botanical marvel adds a touch of modern flair to any setting.",
         image : "plant3.png",
         lightAmount:"low",
-        addedDate: "2023-07-14"
+        addedDate: "2023-07-14",
+        onSale: true
     },
     {
         name : "Parlour Palm",
@@ -34,7 +37,8 @@ const plantArr = [
         description : "With its lush, feather-like fronds and compact size, this indoor beauty makes a striking addition to any interior space.",
         image : "plant4.png",
         lightAmount:"low",
-        addedDate: "2023-07-04"
+        addedDate: "2023-07-04",
+        onSale: false
     },
     {
         name : "Japanese Maple",
@@ -42,7 +46,8 @@ const plantArr = [
         description : "Known for its stunning foliage that transforms with the seasons, this ornamental tree captivates with its delicate, lacy leaves in vibrant shades of red, orange, or gold.",
         image : "plant5.png",
         lightAmount:"bright",
-        addedDate: "2023-04-29"
+        addedDate: "2023-04-29",
+        onSale: false
     }
 ];
 
@@ -61,8 +66,6 @@ function loadPlants (plantsToShow) {
 
     for(let i =0; i < plantsToShow.length;i++){
         const plant = plantsToShow[i];
-
-        console.log(i);
 
         // load plants on browse page
         // ==========================================================================================================
@@ -182,7 +185,12 @@ $(document).ready( ()=>{
             // Filter Plants
 
             if(appliedFilter){
-                filSorPlantArr = plantArr.filter(plant =>plant.lightAmount == appliedFilter);
+                if(appliedFilter == "sale"){
+                    filSorPlantArr = plantArr.filter(plant =>plant.onSale == true);
+                }
+                else{
+                    filSorPlantArr = plantArr.filter(plant =>plant.lightAmount == appliedFilter);
+                }
             }   else{
                 filSorPlantArr = plantArr;
             }
@@ -202,6 +210,15 @@ $(document).ready( ()=>{
                     
                     return db-da;
                 });
+            }
+            else if(appliedSort == "alphabetically"){
+                // sort by alphabetically, a to z
+                filSorPlantArr = filSorPlantArr.sort((a,b) =>{
+                    return a.name.localeCompare(b.name);
+                });
+
+                console.log(filSorPlantArr);
+
             }
 
 
