@@ -214,7 +214,7 @@ $(document).ready( ()=>{
             else if(appliedSort == "alphabetically"){
                 // sort by alphabetically, a to z
                 filSorPlantArr = filSorPlantArr.sort((a,b) =>{
-                    return a.name.localeCompare(b.name);
+                    return a.name.localeCompare(b.name);    
                 });
 
                 console.log(filSorPlantArr);
