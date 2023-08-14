@@ -62,7 +62,7 @@ function loadPlants (plantsToShow) {
     for(let i =0; i < plantsToShow.length;i++){
         const plant = plantsToShow[i];
 
-        console.log(plant);
+        console.log(i);
 
         // load plants on browse page
         // ==========================================================================================================
