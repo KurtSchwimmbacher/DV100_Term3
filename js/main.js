@@ -104,6 +104,7 @@ function loadPlants (plantsToShow) {
 
         // hide description text from the current card item
         $(currentChild).find("#descr").hide();
+        $(currentChild).find("#originTemp").hide();
         // -------------------------------------------------------------------------------------------------------
 
         // load plants on Wishlist page
@@ -124,6 +125,8 @@ function loadPlants (plantsToShow) {
 
         // hide description from table
         $(newChild).find("#rowDescr").hide();
+        
+        
     }
 
 }
@@ -170,6 +173,7 @@ $(document).ready( ()=>{
 
             $(this).find("#descr").toggle();
             $(this).find("#price").toggle();
+            $(this).find("#originTemp").toggle();
 
             // Resize the card for additional content
             $(this).find($(".card-img-top")).toggleClass("small");
