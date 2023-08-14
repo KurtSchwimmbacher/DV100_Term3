@@ -5,13 +5,14 @@
 // Plants Array
 const plantArr = [
     {
-        name : "Fikus Tree",
+        name : "Ficus Tree",
         price : 350,
         description : "Graceful and lush, this charming indoor plant boasts glossy, emerald-green leaves that effortlessly brighten any space.",
         image : "plant1.png" ,
         lightAmount:"low",
         addedDate: "2023-03-25",
-        onSale: true
+        onSale: true,
+        origin: "Pretoria"
     },
     {
         name : "White Sprite Succulent",
@@ -20,7 +21,8 @@ const plantArr = [
         image : "plant2.png",
         lightAmount:"bright",
         addedDate: "2023-05-01",
-        onSale: false
+        onSale: false,
+        origin: "Texas"
     },
     {
         name : "Snake Plant",
@@ -29,7 +31,8 @@ const plantArr = [
         image : "plant3.png",
         lightAmount:"low",
         addedDate: "2023-07-14",
-        onSale: true
+        onSale: true,
+        origin: "Siberia"
     },
     {
         name : "Parlour Palm",
@@ -38,7 +41,8 @@ const plantArr = [
         image : "plant4.png",
         lightAmount:"low",
         addedDate: "2023-07-04",
-        onSale: false
+        onSale: false,
+        origin: "China"
     },
     {
         name : "Japanese Maple",
@@ -47,7 +51,8 @@ const plantArr = [
         image : "plant5.png",
         lightAmount:"bright",
         addedDate: "2023-04-29",
-        onSale: false
+        onSale: false,
+        origin: "Japan"
     }
 ];
 
@@ -67,6 +72,20 @@ function loadPlants (plantsToShow) {
     for(let i =0; i < plantsToShow.length;i++){
         const plant = plantsToShow[i];
 
+
+        $.ajax({
+            type:"GET",
+            url:"https://api.openweathermap.org/data/2.5/weather?q=" + plant.origin + "&appid=8759d43fce621bb6239387dec2630ce5",
+            success: function(data){
+                temp = data;
+                console.log(temp.main.temp);
+            }
+        }).done(function(){
+            $(currentChild).find("#originTemp").text("Origin Temp: "+ Math.round(temp.main.temp-273));
+        })
+
+
+
         // load plants on browse page
         // ==========================================================================================================
 
@@ -80,6 +99,7 @@ function loadPlants (plantsToShow) {
         $(currentChild).find("#nameText").text(plant.name);
         $(currentChild).find("#price").text("R" + plant.price);
         $(currentChild).find("#descr").text(plant.description);
+
         $(currentChild).find(".card-img-top").attr("src","../assets/" + plant.image);
 
         // hide description text from the current card item
